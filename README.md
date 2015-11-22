@@ -3,6 +3,8 @@ diceware
 
 **tl;dr** diceware is an implementation of the [diceware passphrase](http://world.std.com/~reinhold/diceware.html), created by Arnold G. Reinhold
 
+[![Build Status](https://drone.io/github.com/jbrodriguez/diceware/status.png)](https://drone.io/github.com/jbrodriguez/diceware/latest)
+
 ## Screen output
 ```
 $ ./diceware -e -s -w 8
