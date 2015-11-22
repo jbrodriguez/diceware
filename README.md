@@ -61,11 +61,11 @@ Key for score:
 ## Rationale
 There's already a great diceware golang version in https://github.com/natefinch/diceware.
 
-But I happen to own a set of Bicycle dice, which although not the same as Casino dice, are still quite usable.
+But I happen to own a set of Bicycle dice, which although are not the same as Casino dice, they're still quite usable.
 
-So I created a utility that allows me to enter the result of my rolling the dice, and return the  password.
+So I created a utility that allows me to enter the result of my rolling the dice, and output the  password.
 
-Additionally, I added some stats
+Additionally, I added some stats:
 - Some theoretical entropy stats based on number of words in the password (taken from https://grempe.github.io/diceware/)
 - A password strength meter based on [dropbox's zxcvbn implementation](https://github.com/dropbox/zxcvbn) (and golang's version in https://github.com/nbutton23/zxcvbn-go)
 
