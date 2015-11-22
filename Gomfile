@@ -1,0 +1,2 @@
+gom 'github.com/nbutton23/zxcvbn-go', :commit => 'd490adbfd16a8f3be969c0305f0e4517b933e944'
+gom 'github.com/stretchr/testify', :tag => 'v1.0'
