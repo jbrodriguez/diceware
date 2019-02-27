@@ -1,11 +1,11 @@
 package main
 
 import (
-	// "flag"
-	// "fmt"
-	"github.com/stretchr/testify/assert"
+	"os"
 	"strings"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 var rolls, expectedDefault, expectedBeale []string
@@ -45,6 +45,8 @@ func TestMain(m *testing.M) {
 	}
 
 	m.Run()
+
+	os.Exit(0)
 }
 
 func TestGetPassword(t *testing.T) {
