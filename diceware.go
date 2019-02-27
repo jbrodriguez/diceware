@@ -3,19 +3,18 @@ package main
 import (
 	"bytes"
 	"encoding/csv"
-	// "encoding/json"
 	"flag"
 	"fmt"
-	"github.com/nbutton23/zxcvbn-go/matching"
-	"github.com/nbutton23/zxcvbn-go/scoring"
-	"github.com/nbutton23/zxcvbn-go/utils/math"
 	"io"
 	"log"
 	"math"
-	// "os"
 	"strconv"
 	"strings"
 	"time"
+
+	"github.com/nbutton23/zxcvbn-go/matching"
+	"github.com/nbutton23/zxcvbn-go/scoring"
+	zgm "github.com/nbutton23/zxcvbn-go/utils/math"
 )
 
 var Version string
@@ -156,8 +155,8 @@ func getWordsEntropy(numWords int, guessesPerSec float64) Entropy {
 	entropy := Entropy{}
 
 	var (
-		avgHumanLifespanInYears float64 = 67.2         // https://en.wikipedia.org/wiki/Life_expectancy
-		ageOfUniverseInYears    float64 = 13798000000. // https://en.wikipedia.org/wiki/Age_of_the_universe
+		avgHumanLifespanInYears = 67.2         // https://en.wikipedia.org/wiki/Life_expectancy
+		ageOfUniverseInYears    = 13798000000. // https://en.wikipedia.org/wiki/Age_of_the_universe
 	)
 
 	entropy.Entropy = 12.92 * float64(numWords)
@@ -194,7 +193,7 @@ func getPasswordStrength(password string, userInputs []string) scoring.MinEntrop
 	end := time.Now()
 
 	calcTime := end.Nanosecond() - start.Nanosecond()
-	result.CalcTime = zxcvbn_math.Round(float64(calcTime)*time.Nanosecond.Seconds(), .5, 3)
+	result.CalcTime = zgm.Round(float64(calcTime)*time.Nanosecond.Seconds(), .5, 3)
 	return result
 }
 
@@ -297,9 +296,9 @@ func Commaf(v float64) string {
 func trunc(v float64) float64 {
 	if v < 1 {
 		return v
-	} else {
-		return rint(v)
 	}
+
+	return rint(v)
 }
 
 func rint(x float64) float64 {
